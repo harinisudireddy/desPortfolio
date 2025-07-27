@@ -552,17 +552,32 @@ a:hover {
     color: white;
 }
 
-.project-carousel-container {
+/*.project-carousel-container {
     position: relative;
     overflow: hidden;
     padding: 20px 5px;
+}*/
+.project-carousel-container {
+    position: relative;
+    overflow-x: auto;  /* allow horizontal scroll if needed */
+    overflow-y: hidden;
+    padding: 20px 5px;
+    white-space: nowrap; /* optional for inline-block fallback */
 }
 
-.project-carousel {
+
+/*.project-carousel {
     display: flex;
     gap: 30px;
     transition: transform 0.5s ease;
+}*/
+.project-carousel {
+    display: flex;
+    flex-wrap: nowrap;  /* Do NOT allow wrapping */
+    gap: 30px;
+    transition: transform 0.5s ease;
 }
+
 
 .project-card {
     min-width: 350px;
@@ -708,6 +723,14 @@ a:hover {
 .carousel-control:hover {
     background-color: var(--accent-color);
     transform: scale(1.1);
+}
+.project-carousel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.project-carousel-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
 }
 
 
