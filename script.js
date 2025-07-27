@@ -202,73 +202,25 @@ githubBtns.forEach(btn => {
         // The href attribute handles the navigation
     });
 });
-    // PDF Viewer for Blog Posts
-function initPdfViewer() {
-    const pdfLinks = document.querySelectorAll('.pdf-link');
-    
-    pdfLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const pdfUrl = this.getAttribute('data-pdf');
-            
-            // Create PDF viewer modal
-            const pdfModal = document.createElement('div');
-            pdfModal.className = 'pdf-modal';
-            
-            // Create PDF viewer content
-            pdfModal.innerHTML = `
-                <div class="pdf-modal-content">
-                    <button class="close-pdf-modal">&times;</button>
-                    <div class="pdf-container">
-                        <iframe src="${pdfUrl}" class="pdf-iframe"></iframe>
-                    </div>
-                </div>
-            `;
-            
-            // Add to body
-            document.body.appendChild(pdfModal);
-            
-            // Prevent scrolling when modal is open
-            document.body.style.overflow = 'hidden';
-            
-            // Make modal active (for animation)
-            setTimeout(() => {
-                pdfModal.classList.add('active');
-            }, 10);
-            
-            // Close button functionality
-            const closeBtn = pdfModal.querySelector('.close-pdf-modal');
-            closeBtn.addEventListener('click', closePdfViewer);
-            
-            // Close on click outside content
-            pdfModal.addEventListener('click', function(e) {
-                if (e.target === pdfModal) {
-                    closePdfViewer();
-                }
-            });
-            
-            // Close on escape key
-            document.addEventListener('keydown', handleEscKey);
-            
-            function handleEscKey(e) {
-                if (e.key === 'Escape') {
-                    closePdfViewer();
-                }
-            }
-            
-            function closePdfViewer() {
-                pdfModal.classList.remove('active');
-                // Wait for animation to complete before removing
-                setTimeout(() => {
-                    document.body.removeChild(pdfModal);
-                    document.body.style.overflow = '';
-                    document.removeEventListener('keydown', handleEscKey);
-                }, 300);
-            }
-        });
-    });
+function openWork(path) {
+  const modal = document.getElementById('modal');
+  const frame = document.getElementById('modal-frame');
+
+  // Set the iframe src
+  frame.src = path;
+
+  // Show the modal
+  modal.style.display = 'block';
 }
+
+// Close modal on close button click
+function closeModal() {
+  const modal = document.getElementById('modal');
+  const frame = document.getElementById('modal-frame');
+  modal.style.display = 'none';
+  frame.src = ''; // Reset src for performance
+}
+
 
 // Make sure to call this function when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
