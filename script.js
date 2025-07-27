@@ -186,7 +186,7 @@ function initProjectFilters() {
         });
     });
 }
-function openWork(path) {
+/*function openWork(path) {
   const modal = document.getElementById('modal');
   const frame = document.getElementById('modal-frame');
 
@@ -203,7 +203,7 @@ function closeModal() {
   const frame = document.getElementById('modal-frame');
   modal.style.display = 'none';
   frame.src = ''; // Reset src for performance
-}
+}*/
 
 // Project Details Modal
 function initProjectDetails() {
