@@ -186,22 +186,6 @@ function initProjectFilters() {
         });
     });
 }
-
-// Project Details Modal
-function initProjectDetails() {
-    const detailButtons = document.querySelectorAll('.view-details-btn');
-    const projectDetails = document.querySelectorAll('.project-details');
-    const closeButtons = document.querySelectorAll('.project-details .close-details');
-    // Add this inside your initProjectDetails() function
-const githubBtns = document.querySelectorAll('.github-btn');
-
-githubBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        // Stop event from propagating to the card
-        e.stopPropagation();
-        // The href attribute handles the navigation
-    });
-});
 function openWork(path) {
   const modal = document.getElementById('modal');
   const frame = document.getElementById('modal-frame');
@@ -221,6 +205,15 @@ function closeModal() {
   frame.src = ''; // Reset src for performance
 }
 
+// Project Details Modal
+function initProjectDetails() {
+    const detailButtons = document.querySelectorAll('.view-details-btn');
+    const projectDetails = document.querySelectorAll('.project-details');
+    const closeButtons = document.querySelectorAll('.project-details .close-details');
+    // Add this inside your initProjectDetails() function
+
+
+
 
 // Make sure to call this function when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -230,11 +223,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectCarousel();
     initProjectFilters();
     initProjectDetails();
-    initResumeModal();
+    
     initScrollAnimations();
     
-    // Add the new PDF viewer initialization
-    initPdfViewer();
+    
 });
     detailButtons.forEach((button, index) => {
         button.addEventListener('click', (e) => {
