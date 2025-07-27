@@ -310,38 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }
 
-// Resume Modal
-function initResumeModal() {
-    const resumeButton = document.getElementById('resumeBtn');
-    const resumeModal = document.getElementById('resumeModal');
-    const closeModal = document.querySelector('.close-modal');
-    
-    resumeButton.addEventListener('click', () => {
-        resumeModal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-    });
-    
-    closeModal.addEventListener('click', () => {
-        resumeModal.classList.remove('active');
-        document.body.style.overflow = ''; // Re-enable scrolling
-    });
-    
-    // Close on click outside the content
-    resumeModal.addEventListener('click', (e) => {
-        if (e.target === resumeModal) {
-            resumeModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-    
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
-            resumeModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-}
 
 // Scroll Animations
 function initScrollAnimations() {
