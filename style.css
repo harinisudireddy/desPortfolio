@@ -1116,7 +1116,7 @@ a:hover {
 .header-social-links .social-link:hover .fa-linkedin-in {
     color: #0077B5; /* LinkedIn blue */
 }
-/* Modal Base Styles */
+/* Modal Base Styles 
 .modal {
   display: none;
   position: fixed;
@@ -1130,7 +1130,7 @@ a:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Modal Content */
+/* Modal Content 
 .modal-content {
   position: relative;
   margin: auto;
@@ -1144,14 +1144,14 @@ a:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-/* Iframe Style */
+/* Iframe Style 
 #modal-frame {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* Close Button */
+/* Close Button 
 .close-btn {
   color: #fff;
   position: absolute;
@@ -1161,4 +1161,4 @@ a:hover {
   font-weight: bold;
   z-index: 10000;
   cursor: pointer;
-}
+}*/
