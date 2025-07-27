@@ -307,13 +307,20 @@ As a candidate for the Creative Design Head, I bring not just skills, but a visi
 
     
     <script src="script.js"></script>
-    <!-- Modal Container -->
+    <!--Modal Container >
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close-btn" onclick="closeModal()">&times;</span>
     <iframe id="modal-frame" src="" frameborder="0" allowfullscreen></iframe>
   </div>
-</div>
+</div-->
+    <script>
+  // Handles opening design work (image, pdf, external links)
+  function openWork(path) {
+    // Open the path in a new tab
+    window.open(path, '_blank');
+  }
+</script>
 
 </body>
 </html>
